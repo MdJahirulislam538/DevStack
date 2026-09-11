@@ -1,4 +1,4 @@
-
+import logo from "../assets/logo-text.png";
 
 const Footer = () => {
     return (
@@ -7,8 +7,7 @@ const Footer = () => {
             <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
                 <div>
                 <div className="flex items-center gap-2.5">
-                    <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-fuchsia-500 to-violet-600 text-[11px] font-extrabold text-white">DS</span>
-                    <span className="text-[17px] font-extrabold">Dev <span className="text-pink-600">Stack</span></span>
+                    <img src={logo} alt="Dev Stack Logo" className="h-8 w-auto object-contain" />
                 </div>
                 <p className="mt-4 max-w-xs text-xs leading-5 text-slate-400">Curated tools, technologies, and resources for developers building modern software.</p>
                 <div className="mt-5 flex gap-4 text-xs font-medium text-slate-600"><a href="#">GitHub</a><a href="#">Twitter</a><a href="#">LinkedIn</a></div>

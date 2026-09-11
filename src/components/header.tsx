@@ -1,12 +1,11 @@
-
+import logo from "../assets/logo-text.png";
 
 const Header = () => {
     return (
         <header className="border-b border-slate-100 bg-white/95 backdrop-blur sticky top-0 z-50">
             <div className="mx-auto flex h-[68px] max-w-[1080px] items-center justify-between px-5 lg:px-0">
             <a href="#" className="flex items-center gap-2.5">
-                <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-fuchsia-500 to-violet-600 text-[11px] font-extrabold text-white shadow-sm">DS</span>
-                <span className="text-[17px] font-extrabold tracking-tight">Dev <span className="text-pink-600">Stack</span></span>
+                <img src={logo} alt="Dev Stack Logo" className="h-8 w-auto object-contain" />
             </a>
 
             <nav className="hidden items-center gap-8 text-[13px] font-medium text-slate-500 md:flex">

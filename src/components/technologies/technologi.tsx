@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Technology } from '../type';
+import { toast } from 'react-toastify';
 
 export interface TechnologiesProps {
   technologiesPromise: Promise<Technology[]>;
@@ -24,13 +25,20 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   }, [technologiesPromise]);
 
   const toggleTech = (name: string) => {
-    setSelectedTech((current) =>
-      current.includes(name)
-        ? current.filter((tech) => tech !== name)
-        : [...current, name],
-    );
+    const isSelected = selectedTech.includes(name);
+    const next = isSelected ? selectedTech.filter((tech) => tech !== name) : [...selectedTech, name];
+
+    setSelectedTech(next);
+
+    toast.success(`${name} Technology added successfully!`);
+
   };
 
+//   const showToast = () => {
+//     toast.success("Technology added successfully!");
+//   };
+
+  
     function getTechIcon(techName: string): string | undefined {
         const tech = technologies.find((t) => t.name === techName);
         return tech ? tech.icon : undefined;
@@ -98,10 +106,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
                 ))
               )}
             </div>
-            <button
-              onClick={() => setSelectedTech([])}
-              className="mt-4 w-full rounded-lg border border-red-200 py-2.5 text-xs font-semibold text-red-500 hover:bg-red-50"
-            >
+            <button onClick={() => setSelectedTech([])} className="mt-4 w-full rounded-lg border border-red-200 py-2.5 text-xs font-semibold text-red-500 hover:bg-red-50">
               Remove All
             </button>
           </aside>

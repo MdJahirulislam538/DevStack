@@ -5,6 +5,8 @@ import Header from './components/header'
 import type { Technology } from './components/type';
 import Hero from './components/hero';
 import Technologies from './components/technologies/technologi';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
 
       </main>
       <Footer />
+      <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover />
     </>
   )
 }
